@@ -125,13 +125,10 @@ The usbrelay binary, libusbrelay.so and libusbrelay_py.so libraries will be buil
 ### Usage:
 The code needs to access the device. This can be achieved either by running the program with root privileges (so sudo is your friend) or by putting
 ```
-SUBSYSTEM=="usb", ATTR{idVendor}=="16c0",ATTR{idProduct}=="05df", MODE="0666"                          NO WORK!!!
-KERNEL=="hidraw*", ATTRS{busnum}=="1", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05df", MODE="0666"  NO WORK!!!
-```
 SUBSYSTEM=="input", GROUP="input", MODE="0666"
 SUBSYSTEM=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05df", MODE:="666", GROUP="plugdev"
 KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05df", MODE="0666", GROUP="plugdev"
-
+```
 to `/etc/udev/rules.d/50-dct-tech-usb-relay-2.rules`.
 
 
